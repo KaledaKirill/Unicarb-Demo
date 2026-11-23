@@ -14,7 +14,7 @@ const issues = [
   ["Verify", "Template health and performance", "The audit found repeated H1s and defects in headings, alt text and forms.",
     "Fix home and footer headings, descriptive alt text, email link markup and form labels. Measure Core Web Vitals and check large images. Verify hosting and web application firewall behavior before drawing conclusions about bot access."],
   ["Verify", "Structured data and brand identity", "Confirm existing schema and clarify the UNICARB–LSR relationship.",
-    "Verify Yoast JSON-LD in rendered pages. Build Organization and BreadcrumbList markup where appropriate. Make UNICARB’s relationship to LSR Materials explicit and consistent across the site and credible listings. Check brand search in Search Console."]
+    "Verify Yoast JSON-LD in rendered pages. Build Organization and BreadcrumbList markup where appropriate. Make the relationship to LSR Materials explicit. The German keyword database checked on 23 November 2026 returned no ranking keywords for unicarb-ac.com. Confirm search visibility in Search Console."]
 ];
 
 const keywords = {

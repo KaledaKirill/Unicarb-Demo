@@ -184,7 +184,6 @@ strong { color: var(--white); }
 .segmented button:hover { color: var(--white); }
 .segmented button[aria-pressed="true"] { color: var(--accent); border-color: #335a54; background: #1a312e; }
 .segmented.compact button { padding-inline: 9px; min-height: 32px; font-size: .82rem; }
-.verification-note { color: var(--muted); font-size: .86rem; padding-top: 13px; }
 .disclosure { border-top: 1px solid var(--line); padding-top: 11px; }
 .disclosure summary { color: var(--white); font-size: .94rem; font-weight: 610; min-height: 30px; }
 .disclosure summary:hover { color: var(--accent); }
