@@ -22,7 +22,8 @@
 html { min-width: 280px; }
 body {
   margin: 0;
-  background: radial-gradient(ellipse 85% 470px at 84% 4%, #102126 0, transparent 72%), var(--bg);
+  min-height: 100vh;
+  background: var(--bg) radial-gradient(ellipse 85% 470px at 84% 4%, #102126 0, transparent 72%) no-repeat;
   color: var(--text);
   font: 1rem/1.55 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
