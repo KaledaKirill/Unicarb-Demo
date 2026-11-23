@@ -211,9 +211,9 @@ strong { color: var(--white); }
 .target-list strong { display: block; font-size: 1.7rem; line-height: 1.06; }
 .target-list span { font-size: .84rem; color: var(--muted); }
 .readiness .disclosure { margin-top: 13px; }
-.score-breakdown, .team-list, .workload { font-size: .91rem; }
-.score-breakdown > div, .team-list > div, .workload > div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--line); }
-.score-breakdown dd, .team-list dd, .workload dd { color: var(--muted); text-align: right; }
+.score-breakdown, .team-list { font-size: .91rem; }
+.score-breakdown > div, .team-list > div { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.score-breakdown dd, .team-list dd { color: var(--muted); text-align: right; }
 .issue-stack, .pillar-stack { display: grid; gap: 8px; }
 .issue, .pillar { padding: 0; }
 .issue summary, .pillar summary {
@@ -377,8 +377,7 @@ strong { color: var(--white); }
 .kickoff-list h2 { font-size: 1.21rem; letter-spacing: -.02em; margin-bottom: 4px; }
 .kickoff-list p { font-size: .94rem; }
 .team h2 { margin: 7px 0 8px; }
-.team > .small { margin: 9px 0; }
-.team-list dt, .workload dt { color: var(--white); font-weight: 570; }
+.team-list dt { color: var(--white); font-weight: 570; }
 .deck-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px; min-height: 70px; padding: 10px 0; margin-top: 15px; border-top: 1px solid var(--line); }
 .deck-progress { display: flex; gap: 10px; align-items: center; color: var(--muted); font: 550 .75rem/1 var(--mono); white-space: nowrap; }
 .progress-track { width: 74px; height: 3px; border-radius: 5px; background: #34474d; }
