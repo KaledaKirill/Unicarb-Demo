@@ -154,8 +154,6 @@ strong { color: var(--white); }
 .hero-summary { max-width: 48ch; margin-top: 17px; color: #d1d9d9; font-size: clamp(1rem, 1.22vw, 1.19rem); }
 .button.primary { margin-top: 25px; min-height: 45px; background: var(--accent); border-color: var(--accent); color: #0a211c; padding-inline: 18px; }
 .button.primary:hover { background: #a9f5e3; border-color: #a9f5e3; }
-.hero-caption { position: absolute; bottom: 20px; right: 24px; display: flex; align-items: center; gap: 8px; color: #c6d3d3; font: 500 .67rem/1.35 var(--mono); letter-spacing: .075em; }
-.sample-key { width: 7px; height: 7px; border: 1px solid var(--accent); transform: rotate(45deg); }
 .metric-strip { display: grid; grid-template-columns: .84fr 1fr .89fr 1.17fr 1.24fr; margin-top: 17px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--panel-deep); }
 .metric-strip > div { padding: 15px clamp(12px, 1.65vw, 26px) 16px; }
 .metric-strip > div + div { border-left: 1px solid var(--line); }
@@ -434,7 +432,6 @@ body.presenting .masthead { height: 55px; }
   .hero-content .eyebrow { max-width: 33ch; }
   .hero h1 { font-size: clamp(2.35rem, 10vw, 3.65rem); }
   .wide-break { display: none; }
-  .hero-caption { right: 13px; bottom: 13px; font-size: .61rem; }
   .hero-image { background-position: 61% center; }
   .metric-strip { grid-template-columns: 1fr 1fr; }
   .metric-strip > div { min-height: 82px; }
@@ -471,7 +468,6 @@ body.presenting .masthead { height: 55px; }
 }
 @media (max-width: 350px) {
   .header-actions svg { display: none; }
-  .hero-caption { font-size: .56rem; }
   .issue summary, .pillar summary { padding-inline: 8px; gap: 7px; }
   .severity { min-width: 53px; }
   .roadmap-months { grid-template-columns: 1fr 1fr; }

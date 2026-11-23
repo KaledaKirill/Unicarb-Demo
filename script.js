@@ -1,13 +1,13 @@
 "use strict";
 
 const issues = [
-  ["Critical", "Language routing and metadata", "German copy and links appear on English and Polish pages.",
+  ["Critical", "Language routing and metadata", "German text appeared on English and Polish pages. Polish links pointed to German pages.",
     "The audit found German titles and descriptions on both localized home pages, placeholder Open Graph titles and Polish product links pointing to German URLs. Verify hreflang and HTML language across templates. Correct localized titles, slugs, interface text and internal links."],
-  ["Critical", "Duplicate URLs and index quality", "The sitemap includes about 10 confirmation URLs and two Polish home pages.",
-    "Confirm index coverage in Google and Bing. Reconcile duplicate Polish home, About, product and biogas URLs. Choose canonical destinations, exclude confirmation pages from search and clean the sitemap. Review language-set mismatches before redirects."],
+  ["High", "Duplicate URLs and index quality", "The sitemap listed about 10 confirmation URLs. Two Polish home pages were indexable.",
+    "Confirm index coverage in Google and Bing. Reconcile duplicate Polish home, About, product and biogas URLs. Clean the sitemap and review the 18 Polish use-case entries against the nominal 17 before making redirects."],
   ["High", "Product specifications and sheets", "Product pages lack the typical values buyers need to compare grades.",
     "Publish approved iodine number, BET surface area, particle size, ash, hardness, moisture, density and CTC where relevant. Add technical data sheets (TDS) and approved safety data sheets (SDS). Public Downloads held ISO 9001 certificates and sales terms at audit."],
-  ["High", "Thin application content", "The PFAS page has about 280 words and no product link.",
+  ["High", "Thin application content", "At audit, the PFAS page had about 280 words and no product link.",
     "Replace unsupported claims with sourced engineering guidance. Explain applicable limits, carbon selection, pilot tests, change-out and handling of spent carbon. Expand drinking-water, biogas and micropollutant coverage."],
   ["High", "Internal linking and hierarchy", "Use cases and product pages rarely connect.",
     "Build links from application areas to use cases and matching products, with a clear inquiry path. Link product pages back to relevant applications. Verify orphan pages in the crawl and clarify application and use-case labels."],
@@ -20,42 +20,42 @@ const issues = [
 const keywords = {
   DE: [
     ["aktivkohle", 9900, 0.75, "Generic product", "Broad activated-carbon demand includes consumer and retail intent. Use application-specific pages to reach engineers and industrial buyers.", false],
-    ["aktivkohle kaufen", 1000, 0.90, "Broad purchase", "This query mixes retail and commercial purchase intent. Direct B2B acquisition toward technical requirements and credible supply pages.", false],
-    ["pfas filter", 390, 1.67, "PFAS & water · mixed intent", "Use the PFAS hub to address water utilities specifically. Explain granular activated carbon, pilot testing and selection under applicable drinking-water rules.", true],
+    ["aktivkohle kaufen", 1000, 0.90, "Broad purchase", "Focus B2B content on application requirements and carbon selection.", false],
+    ["pfas filter", 390, 1.67, "PFAS & water", "Use the PFAS hub to address water utilities specifically. Explain granular activated carbon, pilot testing and selection under applicable drinking-water rules.", true],
     ["vierte reinigungsstufe", 90, 8.23, "Micropollutants", "The highest CPC in this research sample. Build a municipal guide comparing powdered and granular carbon, supported by DWA and research references. Verify plant-specific deadlines.", true],
     ["aktivkohlefilter industrie", 50, 2.38, "Industrial filtration", "Connect industrial filtration queries to relevant application and carbon-selection pages, with a clear route to a technical inquiry.", true],
     ["aktivkohle biogas", 40, 2.74, "Biogas", "Address H₂S and siloxanes, impregnated grades and the inputs needed to estimate consumption.", true],
     ["aktivkohle reaktivierung", 40, null, "Reactivation", "Assess demand for reactivation content. Confirm UNICARB’s take-back and reactivation options before making service claims.", true],
-    ["aktivkohle hersteller", 20, 1.91, "Supplier discovery", "Directories hold this query in the snapshot. Describe UNICARB accurately as a supplier with partner processing and European stock.", true],
+    ["aktivkohle hersteller", 20, 1.91, "Supplier discovery", "A directory ranked first in the sample. Describe UNICARB as a supplier with partner processing and European stock.", true],
     ["imprägnierte aktivkohle", 20, 1.05, "Specialist product", "Publish an evidence-led product page that links suitable impregnated grades to documented applications.", true]
   ],
   PL: [
     ["węgiel aktywny", 33100, 0.24, "Generic product", "This is the largest estimate in the research. It includes consumer searches for uses such as pharmacy, aquariums and home distilling.", false],
-    ["węgiel aktywny cena", 880, 0.14, "Broad price", "Broad price interest mixes retail with industrial sourcing. Win qualified demand with application advice and a practical inquiry path.", false],
-    ["węgiel aktywny kokosowy", 320, 0.31, "Coconut-shell carbon", "Explain selection criteria and publish approved typical values on the relevant Polish product page. The query includes mixed intent.", true],
+    ["węgiel aktywny cena", 880, 0.14, "Broad price", "Prioritize application-specific content and technical product data for industrial buyers.", false],
+    ["węgiel aktywny kokosowy", 320, 0.31, "Coconut-shell carbon", "Explain selection criteria and publish approved typical values on the relevant Polish product page.", true],
     ["węgiel aktywny granulowany", 110, 0.33, "Granular carbon", "Give engineers a localized comparison of relevant grades, particle sizes and applications, supported by approved data.", true],
     ["filtr węglowy przemysłowy", 50, 1.46, "Industrial filtration", "Explain which carbon and supply model suit industrial installations. Clarify technical support and local contact options.", true],
-    ["oczyszczanie biogazu", 40, 1.59, "Biogas upgrading", "Use the Polish biogas hub to address gas-cleaning stages, H₂S, siloxanes and material selection.", true],
+    ["oczyszczanie biogazu", 40, 1.59, "Biogas cleaning", "Use the Polish biogas hub to explain H₂S and siloxane removal and the selection of impregnated grades.", true],
     ["węgiel aktywny producent", 30, null, "Supplier discovery", "Carbom and exporters appear in the source sample. Describe the partner-supply model accurately and pursue relevant supplier directories.", true],
-    ["odsiarczanie biogazu", 20, 4.88, "Biogas desulfurization", "A focused industrial query with the highest reported Polish CPC in the set. Answer it with grade selection, sizing inputs and approved evidence.", true]
+    ["odsiarczanie biogazu", 20, 4.88, "Biogas desulfurization", "The highest reported Polish CPC in the set. Cover grade selection and engineer-reviewed carbon consumption estimates.", true]
   ]
 };
 
 const competitors = {
   DE: [
     ["CarboTech", "German producer", "PFAS and biogas pages, specifications", "≈575 estimated organic visits/month in Germany from 110 keywords.", "Essen production and reactivation, trade-media coverage and Fachverband Biogas membership.", "Publish approved specification tables, then use engineering-led PFAS and biogas articles to build recognition."],
-    ["Jacobi", "Global manufacturer", "Product specifications", "Ranked #2 for “Aktivkohle Biogas Entschwefelung” with AddSorb VA3 in the study.", "A product page with technical figures can rank for a use case.", "Give buyers grade-level data, selection criteria and links between biogas applications and suitable products."],
+    ["Jacobi", "Global manufacturer", "Product specifications", "Ranked #2 for “Aktivkohle Biogas Entschwefelung” with AddSorb VA3 in the study.", "Publishes technical specifications on product pages.", "Give buyers grade-level data, selection criteria and links between biogas applications and suitable products."],
     ["Chemviron", "Global manufacturer", "Reactivation and drinking water", "Ranked #1 for “Aktivkohle Reaktivierung” with a French page in the study.", "Recognized European offering with reactivation depth.", "Develop a German selection guide and confirm take-back and reactivation capabilities before publishing."],
     ["Donau Carbon", "German specialist", "Directory recognition", "Visible in supplier directories. Traffic was unavailable.", "Recognized supplier. Production and reactivation details require verification.", "Strengthen supplier listings and connect them to detailed product and use-case pages."],
-    ["Silcarbon", "German specialist", "Local brand and listings", "Appeared in registers and directories. Traffic was unavailable.", "Trading and production positioning in the research.", "Make multi-source selection, engineering advice and local availability clear."],
-    ["AdFiS", "Biogas specialist", "Narrow application focus", "Ranked #1 for “Aktivkohle Biogas Entschwefelung” in the study.", "A tightly focused biogas proposition.", "Address both H₂S and siloxanes and provide engineer-reviewed sizing inputs."]
+    ["Silcarbon", "German specialist", "Local brand and listings", "Appeared in registers and directories. Traffic was unavailable.", "Trading and production positioning in the research.", "Make multi-source selection, engineering advice and European stock clear."],
+    ["AdFiS", "Biogas specialist", "Narrow application focus", "Ranked #1 for “Aktivkohle Biogas Entschwefelung” in the study.", "A tightly focused biogas proposition.", "Address H₂S and siloxanes and provide engineer-reviewed carbon consumption estimates."]
   ],
   PL: [
     ["Desotec Polska", "Filter service", "30+ Polish knowledge hub items", "Polish knowledge hub observed. Traffic was unavailable.", "Mobile filters and reactivation as a service, with webinars, cases and e-books across PFAS, biogas, VOCs and wastewater.", "Compare an owned filter with carbon supply and a mobile filter service, using accurate scope and selection criteria."],
     ["Carbom", "Online shop", "Educational Polish articles", "Ranked #2 for “węgiel aktywny producent” and #1 – 2 for sampled impregnated-carbon and biogas searches.", "Accessible local education that attracts product and use-case searches.", "Publish engineering-level selection guidance, approved figures, calculations and client-approved cases."],
     ["Bio-Industry", "Biogas specialist", "Dedicated BIOAC-4H2S product", "Product and LinkedIn presence observed. Traffic was unavailable.", "A defined H₂S-removal offer for biogas operators.", "Show the connection between contaminant profile, impregnated grades and operating constraints."],
     ["Eurocarb", "Carbon supplier", "Localized biogas and wastewater page", "A Polish application page appeared near the top in the study.", "Localized application content from a UK supplier.", "Make local language, contact and application engineering visible throughout the purchase journey."],
-    ["Gryfskand / Elbar Katowice", "Local producers †", "Local production to verify", "No visibility in the sampled results.", "Production status is partly based on industry knowledge and requires verification.", "Confirm with the client which local suppliers enter real purchase decisions."]
+    ["Gryfskand / Elbar Katowice", "Local companies", "Production to verify", "The sampled results did not show these companies.", "Confirm whether they produce activated carbon locally.", "Confirm with the client which local suppliers enter real purchase decisions."]
   ]
 };
 
@@ -80,7 +80,7 @@ const countryStrategies = {
       ["Engineering depth and trust", "Use selection data, calculations and approved cases. Compare carbon supply with mobile filters. Confirm Gdańsk, a Polish-speaking contact and PN-EN references."],
       ["Local industry platforms", "Target IndustryStock and Panorama Firm. Pitch Inżynieria, Magazyn Biomasa, Wodociągi Kanalizacja and Teraz Środowisko."]
     ],
-    next: "Use native-level editing for Polish content. Add siloxane depth and local cases after the first biogas release, then prioritize by search data."
+    next: "Have a Polish editor review local copy. In months 6 – 9, extend siloxane coverage and develop cases after Bio Power Expo. Prioritize later expansion by search data."
   }
 };
 
@@ -89,7 +89,7 @@ const pillars = [
   ["Multilingual search architecture", "Map German, English and Polish URLs. Verify hreflang and language tags, localize titles, descriptions, Open Graph and links, then use a data-informed 301 map for approved slug changes."],
   ["Product data and technical credibility", "Publish engineer-approved typical-value tables and technical data sheets for six product groups across three languages. Add safety sheets where approved and link grades to applications."],
   ["Application-focused content", "Create PFAS and biogas hubs, strengthen drinking water and micropollutants, and publish neutral, evidence-led comparisons such as coconut versus coal and granular versus powdered carbon."],
-  ["Authority and industry visibility", "Build consistent profiles in industry directories. Use trade fairs, expert LinkedIn articles and trade media to earn relevant mentions. Refresh priority pages as new evidence becomes available."],
+  ["Authority and industry visibility", "Build consistent directory profiles. Use trade fairs and expert LinkedIn articles as publishing opportunities. Pitch relevant trade media and refresh priority pages."],
   ["AI search discoverability", "Write direct answers, publish citable tables and primary sources, clarify the LSR–UNICARB entity relationship and validate structured data. Check AI bot access and monitor a fixed prompt set."]
 ];
 
@@ -108,20 +108,20 @@ const months = [
   },
   {
     date: "February 2027", short: "Feb 2027", label: "Product data & PFAS", title: "Publish engineering evidence",
-    tasks: ["Publish typical-value tables and technical sheets for six product groups across three languages. Link use cases to product pages.", "Launch the German PFAS hub first, then localize for English and Polish. Map keywords and start repeatable AI-answer tracking.", "Start the Polish biogas hub and initial listings where content and local pages are ready."],
+    tasks: ["Publish typical-value tables and technical sheets for six product groups across three languages. Link use cases to product pages.", "Launch the German PFAS hub first, then localize for English and Polish. Map keywords and start repeatable AI-answer tracking.", "Start the Polish biogas hub and directory outreach in both markets where pages are ready."],
     milestone: "First PFAS hub live, approved technical facts available and AI tracking running.",
     dependency: "Client-approved data, native editing, primary regulatory references and verified product claims."
   },
   {
     date: "March 2027", short: "Mar 2027", label: "Use cases & LSR", title: "Expand priority applications",
-    tasks: ["Rework biogas, drinking water and micropollutants. Merge weak pages where justified.", "Publish two neutral, evidence-led comparison pages. Extend the German fourth-stage treatment and Polish water / PFAS content.", "Apply finished shared template fixes to LSR and begin the wider off-site work."],
+    tasks: ["Rework biogas, drinking water and micropollutants. Merge weak pages where justified.", "Prepare two neutral comparison pages for publication. Begin the month 4 – 5 work on German fourth-stage treatment and Polish water and PFAS content.", "Apply finished shared template fixes to LSR and begin the wider off-site work."],
     milestone: "Target readiness of 80+, priority use cases and comparisons live, LSR template rollout under way.",
     dependency: "Approved technical copy and comparison scope, validated templates, and the client’s review of key claims."
   },
   {
-    date: "April 2027", short: "Apr 2027", label: "Authority & AI", title: "Earn industry visibility",
+    date: "April 2027", short: "Apr 2027", label: "Authority & AI", title: "Start industry outreach",
     tasks: ["Pursue German and Polish trade media and relevant directories. Use trade fairs as timely publishing hooks.", "Publish engineer-led LinkedIn content and assess a Wikidata entry if eligible. Start a refresh cycle for key pages.", "Review early external mentions, Bing citation reports and fixed-prompt AI observations."],
-    milestone: "Look for initial external mentions and usable AI citation data as activity matures.",
+    milestone: "Outreach and page refreshes under way. Report any external mentions and AI citations observed.",
     dependency: "Published assets, client PR approvals and third-party editorial schedules."
   },
   {
@@ -240,7 +240,7 @@ function renderMarketInsight() {
     ? `<article class="panel context-card">
          <h3>German drinking-water limits</h3>
          <div class="reg-values"><div><strong>PFAS-20 · 100 ng/L</strong><small>From 12 Jan 2026</small></div><div><strong>PFAS-4 · 20 ng/L</strong><small>From 12 Jan 2028</small></div></div>
-         <p class="muted">Confirm fourth-stage implementation dates for each plant before publishing.</p>
+         <p class="muted">The German Drinking Water Ordinance sets these limits.</p>
        </article>`
     : `<article class="panel context-card">
          <h3>Biogas first, water next</h3>
@@ -265,7 +265,7 @@ function renderCompetition() {
   put("competitor-matrix", `
     <table class="matrix">
       <caption>${countryNames[country]} comparison</caption>
-      <thead><tr><th scope="col">Competitor</th><th class="matrix-model-desktop" scope="col">Business model</th><th scope="col">Content strength</th><th scope="col">Search evidence</th></tr></thead>
+      <thead><tr><th scope="col">Competitor</th><th class="matrix-model-desktop" scope="col">Business model</th><th scope="col">Content strength</th><th scope="col">Observed visibility</th></tr></thead>
       <tbody>${competitors[country].map(([name, model, content], index) => `
         <tr><th scope="row"><button type="button" data-competitor="${index}" aria-controls="competitor-profile" aria-pressed="false">${name}</button><span class="matrix-model-mobile">${model}</span></th>
         <td class="matrix-model-desktop">${model}</td><td>${content}</td><td>${observed[country][index]}</td></tr>`).join("")}</tbody>
@@ -278,7 +278,7 @@ function renderCompetition() {
     </div>`
     : `<div class="comp-context">
       <p><strong>Other search results.</strong> IndustryStock and Panorama Firm ranked for supplier searches. Machine-translated exporters appeared for producer terms. Allegro and retailers capture broad consumer demand.</p>
-      <p><strong>† To verify.</strong> Confirm Gryfskand and Elbar Katowice production and market relevance with client input. Expand traffic and backlinks research after access in month 1.</p>
+      <p><strong>Production to verify.</strong> Confirm Gryfskand and Elbar Katowice production and market relevance with client input. Expand traffic and backlink research in month 1.</p>
     </div>`);
 
   renderCompetitorProfile();
@@ -296,7 +296,7 @@ function renderCompetitorProfile() {
   put("competitor-profile", `
     <p class="eyebrow">${model.toUpperCase()}</p><h2>${name}</h2><p>${search}</p>
     <div class="profile-section"><h3>What sets them apart</h3><p>${strength}</p></div>
-    <div class="profile-section"><h3>UNICARB’s response</h3><p>${response}</p></div>
+    <div class="profile-section"><h3>Proposed UNICARB response</h3><p>${response}</p></div>
     <div class="profile-section"><p class="muted">UNICARB combines partner processing and European stock with application advice across coconut, hard coal, wood and renewable grades.</p></div>`);
 }
 
@@ -324,11 +324,11 @@ function renderMonth() {
   put("roadmap-detail", `
     <div>
       <p class="eyebrow">${month.date.toUpperCase()} · MONTH ${state.month + 1}</p>
-      <h2>${month.title}</h2><h3>Work to deliver</h3>
+      <h2>${month.title}</h2><h3>Planned work</h3>
       <ul>${month.tasks.map((task) => `<li>${task}</li>`).join("")}</ul>
     </div>
     <div class="roadmap-aside">
-      <section><p class="eyebrow">EXPECTED MILESTONE</p><p>${month.milestone}</p></section>
+      <section><p class="eyebrow">TARGET MILESTONE</p><p>${month.milestone}</p></section>
       <section><p class="eyebrow">DEPENDENCIES</p><p>${month.dependency}</p></section>
     </div>`);
 }
